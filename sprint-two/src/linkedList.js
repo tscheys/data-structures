@@ -4,13 +4,33 @@ var LinkedList = function(){
   list.tail = null;
 
   list.addToTail = function(value){
+    if (list.tail !== null) {
+      list.tail.next = Node(value);  
+    }
+    list.tail = Node(value);
+    if (list.head === null) {
+      list.head = list.tail;
+    }
+    
+    // list.tail.next = null;
   };
 
   list.removeHead = function(){
+    // if (list.head.next !== null) {
+      var temp = list.head.next;
+      list.head = null;
+      list.head = temp;
+    // } else {
+      list.tail = null;
+    // }
   };
 
   list.contains = function(target){
   };
+
+  list.print = function() {
+    return console.log(list);
+  }
 
   return list;
 };
