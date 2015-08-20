@@ -18,10 +18,12 @@ var LinkedList = function(){
   list.removeHead = function(){
     // if (list.head.next !== null) {
       var temp = list.head.next;
+      var currentHead = list.head;
       list.head = null;
       list.head = temp;
     // } else {
       list.tail = null;
+      return currentHead.value;
     // }
   };
 
