@@ -15,14 +15,10 @@ var LinkedList = function(){
       list.head.next = Node(value);
       list.tail = Node(value);
     } else {
-      debugger;
       var newTail = Node(value);
       list.tail.next = newTail; 
       list.tail = newTail;
-      // list.tail = Node(value);
-      // currentTail.next = list.tail;
     }
-
 
   };
 
@@ -73,4 +69,5 @@ var Node = function(value){
 
 /*
  * Complexity: What is the time complexity of the above functions?
+ * O(n)? 
  */
