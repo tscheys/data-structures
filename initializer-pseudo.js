@@ -1,7 +1,7 @@
 var arr = [];
 
 function callit () {
-  for(var i = 0; i < 1000000; i++) {
+  for(var i = 0; i < 100; i++) {
     arr.push(new Queue());
   }
 }
