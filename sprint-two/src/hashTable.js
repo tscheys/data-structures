@@ -3,7 +3,7 @@ var HashTable = function(){
   this._storage = LimitedArray(this._limit);
 };
 
-HashTable.prototype.insert = function(k, v){
+HashTable.prototype.insert = function(k, v){ // O(1)
   var i = getIndexBelowMaxForKey(k, this._limit);
   if (!this._storage.get(i)) {
     this._storage.set(i, []);
@@ -23,7 +23,7 @@ HashTable.prototype.insert = function(k, v){
   this._storage.set(i, bucket);
 };
 
-HashTable.prototype.retrieve = function(k){
+HashTable.prototype.retrieve = function(k){ // O(1)
   var i = getIndexBelowMaxForKey(k, this._limit);
   var bucket = this._storage.get(i);
   for (var j = 0; j < bucket.length; j += 2) {
@@ -34,7 +34,7 @@ HashTable.prototype.retrieve = function(k){
   return "null";
 };
 
-HashTable.prototype.remove = function(k){
+HashTable.prototype.remove = function(k){ // O(1)
   var i = getIndexBelowMaxForKey(k, this._limit);
   var bucket = this._storage.get(i);
   for (var j = 0; j < bucket.length; j += 2) {
@@ -43,10 +43,6 @@ HashTable.prototype.remove = function(k){
     }
   };
 };
-
-HashTable.prototype.print = function() {
-  console.log(this._storage.print());
-}
 
 /*
  * Complexity: What is the time complexity of the above functions?
